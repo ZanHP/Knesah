@@ -37,10 +37,10 @@ V teoriji grafov poznamo mnogo različnih tipov grafov. Razlikujemo jih glede na
 %%%%
 
 \begin{definicija}
-Graf $K(n,k)$, $n \geq k \geq 1$ in $n, k \in \mathbb{N}$, imenujemo \mbox{\textbf{Kneserjev}}, če je množica vozlišč $V(n,k)$ družina vseh podmnožic moči $k$ množice $\{1, 2, \ldots, n\}$. Dve vozlišči sta povezani natanko takrat, ko sta disjunktni. 
+Graf $K(n,k)$, $n \geq k \geq 1$ in $n, k \in \mathbb{N}$, imenujemo \mbox{\textbf{Kneserjev}}, če je množica vozlišč $V(n,k)$ družina vseh $k$-elementnih podmnožic množice $\{1, 2, \ldots, n\}$. Dve vozlišči sta povezani natanko takrat, ko sta disjunktni. 
 \end{definicija}
 
-Povejmo še, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. V primeru, ko je $n < 2k$, imata vsaki dve množici s $k$ elementi neprazen presek. Tak Kneserjev graf nima nobenih povezav, zato privzemimo, da velja $n \geq 2k$.
+Povejmo še, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. V primeru, ko je $n < 2k$, imata vsaki dve $k$-elementni množici neprazen presek. Tak Kneserjev graf nima nobenih povezav, zato privzemimo, da velja $n \geq 2k$.
 
 
 \begin{definicija}
@@ -51,15 +51,26 @@ Najmanjše število $m$, ki zadošča barvanju vozlišč grafa $G$, imenujemo \t
 Preslikavo $c: V \rightarrow \{1, \ldots, m\}$, ki slika vozlišča grafa v množico barv, imenujemo \textbf {barvanje}. Ta preslikava zadošča pogoju, da sta vsaki dve sosednji vozlišči pobarvani z različnima barvama.
 \end{definicija}
 
-Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da se nobeni dve sosednji vozlišči slikata v isto barvo. Množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. ??Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej množice moči $k$, neprazen presek.??
+Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da se nobeni dve sosednji vozlišči slikata v isto barvo. Množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. ??Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek.??
 
 Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(K(n,k))}$, kjer bo vsak $V_i$ družina množic moči $k$ z nepraznim presekom. Ker smo predpostavili, da je $n \geq 2k$, poenostavimo zapis in pišimo $n = 2k + d, k \geq 1, d \geq 0$.
 
 \section{Kneserjeva domneva}
+
+Cilj tega seminarja je dokazati naslednji izrek: \\
+
 \begin{izrek}%[Kneserjeva domneva]
 Za kromatično število Kneserjevega grafa velja
 $$\chi(K(2k+d,k)) = d+2.$$
 \end{izrek}
+
+\noindent
+Preformulirajmo ta izrek v obliko problema obstoja na sledeč način: \\
+
+\noindent
+{\em Če družino podmnožic s $k$ elementi množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$, da $V_i$ vsebuje par $k$-elementnih disjunktnih množic $A$ in $B$.} \\
+
+Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$.
 
 \begin{thebibliography}{1}
 
