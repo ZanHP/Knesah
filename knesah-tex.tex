@@ -59,7 +59,7 @@ Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V 
 
 Cilj tega seminarja je dokazati naslednji izrek: \\
 
-\begin{izrek}%[Kneserjeva domneva]
+\begin{izrek}[Kneser]
 Za kromatično število Kneserjevega grafa velja
 $$\chi(K(2k+d,k)) = d+2.$$
 \end{izrek}
@@ -70,7 +70,28 @@ Preformulirajmo ta izrek v obliko problema obstoja na sledeč način: \\
 \noindent
 {\em Če družino podmnožic s $k$ elementi množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$, da $V_i$ vsebuje par $k$-elementnih disjunktnih množic $A$ in $B$.} \\
 
-Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$.
+Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^d $, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
+
+\begin{izrek}[Borsuk-Ulam]
+Za vsako zvezno preslikavo $f:S^d \rightarrow \mathbb{R}^d$, z $d$-sfere v $d$-prostor, obstajata antipodni točki $x^*$ in $-x^*$, ki ju $f$ slika v isto točko, torej $f(x^*)=f(-x^*)$.
+\end{izrek}
+
+Dokaz tega izreka lahko bralec najde v knjigi ''Using the Borsuk-Ulam theorem'' matematika Jirija Matouška, mi pa se bomo posvetili njegovi uporabi pri dokazu izreka Lyusternika in Shnirel'mana.
+
+\begin{izrek}[Lyusternik-Shnirel'man]
+Če je $d$-sfera $S^d$ pokrita z $d+1$ množicami,
+$$S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1},$$
+tako, da so vse izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprte bodisi zaprte, potem ena izmed $d+1$ množic vsebuje par antipodnih točk $x^*$ in $-x^*$.
+\end{izrek}
+
+\noindent
+{\em Dokaz (s protislovjem in uporabo Borsuk-Ulamovega izreka):} Naj bo pokritje $S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1}$ dano, kot je zapisano v izreku. Predpostavimo, da noben izmed $U_i$ ne vsebuje dveh antipodnih točk. Definirajmo preslikavo $f:S^d \rightarrow \mathbb{R}^d$ na sledeč način:
+$$f(x) := (d(x,U_1), d(x,U_2), \ldots, d(x,U_d)).$$
+Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. Ker je to zvezna funkcija na $x$, je tudi $f$ zvezna. Torej lahko uporabimo Borsuk-Ulamov izrek, ki nam pove, da na domeni $f$, torej na $S^d$, obstajata antipodni točki $x^*$ in $-x^*$ z lastnostjo $f(x^*)=f(-x^*)$. Ker po predpostavki $U_{d+1}$ ne vsebuje antipodnih točk, sklepamo, da je vsaj en izmed $x^*$ in $-x^*$ vsebovan v eni izmed množic $U_i$, recimo v $U_k$ za $k\leq d$. Brez škode za splošnost lahko privzamemo, da je to $x^*$, torej $x^* \in U_k$. To pomeni, da je $d(x^*, U_k) = 0$, ključno pa je, da je zaradi lastnosti $f(x^*)=f(-x^*)$ tudi $d(-x^*, U_k) = 0$.\\
+Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.\\
+Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline {U_k}$. Ta množica pa je %ne razumem nekih simbolov....
+
+%%%%
 
 \begin{thebibliography}{1}
 
