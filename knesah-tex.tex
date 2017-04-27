@@ -57,6 +57,10 @@ Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lah
 
 Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(K(n,k))}$, kjer bo vsak $V_i$ družina množic moči $k$ z nepraznim presekom. Ker smo predpostavili, da je $n \geq 2k$, poenostavimo zapis in pišimo $n = 2k + d, k \geq 1, d \geq 0$.
 
+Zapišimo še preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila i iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale $k$-elementne množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$. 
+
+Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kromatično število Kneserjevega grafa $K(2k+d,k)$.
+
 \section{Kneserjeva domneva}
 
 Cilj tega seminarja je dokazati naslednji izrek: \\
@@ -87,7 +91,7 @@ tako, da so vse izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprte bo
 \end{izrek}
 
 \noindent
-{\em Dokaz (s protislovjem in uporabo Borsuk-Ulamovega izreka):} \\
+{\em Dokaz s protislovjem in uporabo Borsuk-Ulamovega izreka:} \\
 \indent Naj bo pokritje $S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1}$ dano, kot je zapisano v izreku. Predpostavimo, da noben izmed $U_i$ ne vsebuje dveh antipodnih točk. Definirajmo preslikavo $f:S^d \rightarrow \mathbb{R}^d$ na sledeč način:
 $$f(x) := (d(x,U_1), d(x,U_2), \ldots, d(x,U_d)).$$
 Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. \\
@@ -95,14 +99,40 @@ Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. \\
 \indent Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.\\
 \indent Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline {U_k}$. Ta množica pa je vsebovana v $S^d\textbackslash(-U_k)$, \mbox{$-U_k = \{-x;x \in U_k\}$}. Množica $S^d\textbackslash(-U_k)$ je namreč zaprta in vsebuje $U_k$, pri tem smo upoštevali predpostavko, da $U_k$ ne vsebuje antipodnih točk. Ampak, ker je zaprta in vsebuje $U_k$, vsebuje tudi $\overline {U_k}$. To pomeni, da $-x^*$ leži v  $S^d\textbackslash(-U_k)$, torej ne more ležati v $-U_k$. Ker pa smo privzeli, da $x^* \in U_k$, smo prišli do protislovja. \qed
 
+V svojem dokazu iz leta 1978 je Imre Bárány uporabil še Galeov izrek o obstoju določene postavitve točk na sfero $S^d$. Bárány je svoj dokaz objavil nekaj tednov za tem, ko je László Lovász prvi dokazal Kneserjevo domnevo s pomočjo Borsuk-Ulamovega dokaza.
+
+\begin{izrek}[Gale]
+Obstaja taka postavitev $2k+d$ točk na $d$-dimenzionalno sfero $S^d$, da vsaka odprta polsfera vsebuje vsaj $k$ izmed teh točk.
+\end{izrek}
+
+Leta 2002 je dodiplomski študent Joshua Greene nadalje poenostavil Bárányjev dokaz. Ugotovil je namreč, da zadošča, če so točke iz izreka v splošnem položaju na sferi.
+
+\begin{definicija}
+Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošnem položaju} na sferi $S^{d+1}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
+\end{definicija}
+
+\noindent
+{\em Dokaz Kneserjeve domneve:}
+
+\indent Vzemimo množico $2k+d$ točk v splošnem položaju na sferi $S^{d+1}$. Naj bo $V(n,k)$ množica vseh $k$-elementnih podmnožic začetne množice, razdelimo jo na $d+1$ razredov, $V(n,k) = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$. Naš cilj je najti par disjunktnih $k$-elementnih množic $A$ in $B$, ki pripadata istemu razredu $V_i$.
+
+Za $i=1, 2,\ldots, d+1$ definirajmo $O_i = \{x \in S^{d+1}; \text{odprta polsfera } H_x \text{ z vrhom } x \text{ vsebuje } k\text{-elementno množico iz } V_i\}.$ %polepšati, da bo kot v besedilu
+
+Vsaka množica $O_i$ je odprta. Za vsak $x \in O_i$ namreč obstaja neka odprta okolica, za vsak element $y$ iz te okolice pa še vedno velja, da polsfera, katere vrh je $y$, vsebuje istih $k$-elementov kot polsfera, katere vrh je $x$. To sledi iz dejstva, da smo v definiciji množic $O_i$ uporabili {\em odprte} polsfere.
+
+Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1}$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic $O_i$ vsebuje antipodni točki $x^*$ in $-x^*$. 
+
+Recimo, da je to množica $C$. Potem po definiciji množic $O_i$ polsferi $H_{x^*}$ in $H_{-x^*}$ vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije.  
+
+
 %%%%
 
 \begin{thebibliography}{1}
 
 \bibitem{AiZ}
 M.~Aigner in G.~M.~Ziegler, \emph{Proofs from THE BOOK}, 2.\ izdaja, Springer, Berlin--Heidelberg--New York, 2001.
-\bibitem{Ber}
 %https://math.berkeley.edu/{tu manjka ~}brandtm/research/kneser.pdf (25.4.2017)
+%http://oai.cwi.nl/oai/asset/9898/9898A.pdf
 
 \end{thebibliography}
 
