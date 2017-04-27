@@ -7,6 +7,8 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 
+\def\qed{$\hfill\Box$}   % konec dokaza
+\def\qedm{\qquad\Box}   % konec dokaza v matematičnem načinu
 \newtheorem{izrek}{Izrek}
 \newtheorem{trditev}{Trditev}
 \newtheorem{posledica}{Posledica}
@@ -85,11 +87,13 @@ tako, da so vse izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprte bo
 \end{izrek}
 
 \noindent
-{\em Dokaz (s protislovjem in uporabo Borsuk-Ulamovega izreka):} Naj bo pokritje $S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1}$ dano, kot je zapisano v izreku. Predpostavimo, da noben izmed $U_i$ ne vsebuje dveh antipodnih točk. Definirajmo preslikavo $f:S^d \rightarrow \mathbb{R}^d$ na sledeč način:
+{\em Dokaz (s protislovjem in uporabo Borsuk-Ulamovega izreka):} \\
+\indent Naj bo pokritje $S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1}$ dano, kot je zapisano v izreku. Predpostavimo, da noben izmed $U_i$ ne vsebuje dveh antipodnih točk. Definirajmo preslikavo $f:S^d \rightarrow \mathbb{R}^d$ na sledeč način:
 $$f(x) := (d(x,U_1), d(x,U_2), \ldots, d(x,U_d)).$$
-Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. Ker je to zvezna funkcija na $x$, je tudi $f$ zvezna. Torej lahko uporabimo Borsuk-Ulamov izrek, ki nam pove, da na domeni $f$, torej na $S^d$, obstajata antipodni točki $x^*$ in $-x^*$ z lastnostjo $f(x^*)=f(-x^*)$. Ker po predpostavki $U_{d+1}$ ne vsebuje antipodnih točk, sklepamo, da je vsaj en izmed $x^*$ in $-x^*$ vsebovan v eni izmed množic $U_i$, recimo v $U_k$ za $k\leq d$. Brez škode za splošnost lahko privzamemo, da je to $x^*$, torej $x^* \in U_k$. To pomeni, da je $d(x^*, U_k) = 0$, ključno pa je, da je zaradi lastnosti $f(x^*)=f(-x^*)$ tudi $d(-x^*, U_k) = 0$.\\
-Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.\\
-Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline {U_k}$. Ta množica pa je %ne razumem nekih simbolov....
+Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. \\
+\indent Ker je to zvezna funkcija na $x$, je tudi $f$ zvezna. Torej lahko uporabimo Borsuk-Ulamov izrek, ki nam pove, da na domeni $f$, torej na $S^d$, obstajata antipodni točki $x^*$ in $-x^*$ z lastnostjo $f(x^*)=f(-x^*)$. Ker po predpostavki $U_{d+1}$ ne vsebuje antipodnih točk, sklepamo, da je vsaj en izmed $x^*$ in $-x^*$ vsebovan v eni izmed množic $U_i$, recimo v $U_k$ za $k\leq d$. Brez škode za splošnost lahko privzamemo, da je to $x^*$, torej $x^* \in U_k$. To pomeni, da je $d(x^*, U_k) = 0$, ključno pa je, da je zaradi lastnosti $f(x^*)=f(-x^*)$ tudi $d(-x^*, U_k) = 0$.\\
+\indent Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.\\
+\indent Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline {U_k}$. Ta množica pa je vsebovana v $S^d\textbackslash(-U_k)$, \mbox{$-U_k = \{-x;x \in U_k\}$}. Množica $S^d\textbackslash(-U_k)$ je namreč zaprta in vsebuje $U_k$, pri tem smo upoštevali predpostavko, da $U_k$ ne vsebuje antipodnih točk. Ampak, ker je zaprta in vsebuje $U_k$, vsebuje tudi $\overline {U_k}$. To pomeni, da $-x^*$ leži v  $S^d\textbackslash(-U_k)$, torej ne more ležati v $-U_k$. Ker pa smo privzeli, da $x^* \in U_k$, smo prišli do protislovja. \qed
 
 %%%%
 
