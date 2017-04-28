@@ -53,30 +53,31 @@ Najmanjše število $m$, ki zadošča barvanju vozlišč grafa $G$, imenujemo \t
 Preslikavo $c: V \rightarrow \{1, \ldots, m\}$, ki slika vozlišča grafa v množico barv, imenujemo \textbf {barvanje}. Ta preslikava zadošča pogoju, da sta vsaki dve sosednji vozlišči pobarvani z različnima barvama.
 \end{definicija}
 
-Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da se nobeni dve sosednji vozlišči slikata v isto barvo. Množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. ??Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek.??
+Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da se nobeni dve sosednji vozlišči ne slikata v isto barvo. Množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. 
+
+Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek. To sledi iz definicije Kneserjevih grafov, če bi imele te množice prazen presek, to je, obstajali bi vsaj dve disjunktni, med katerima bi obsatjala povezava, zato pa bi bili pobarvani z različno barvo.
 
 Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(K(n,k))}$, kjer bo vsak $V_i$ družina množic moči $k$ z nepraznim presekom. Ker smo predpostavili, da je $n \geq 2k$, poenostavimo zapis in pišimo $n = 2k + d, k \geq 1, d \geq 0$.
 
-Zapišimo še preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila i iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale $k$-elementne množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$. 
+Da dobimo idejo, s koliko barvami zanesljivo lahko pobarvamo Kneserjev graf, zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila i iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale $k$-elementne množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$. 
 
-Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kromatično število Kneserjevega grafa $K(2k+d,k)$.
+Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kar najmanjše možno število barv, torej kromatično število Kneserjevega grafa $K(2k+d,k)$.
 
 \section{Kneserjeva domneva}
 
-Cilj tega seminarja je dokazati naslednji izrek: \\
-
+Cilj tega seminarja je dokazati naslednji izrek:
 \begin{izrek}[Kneser]
 Za kromatično število Kneserjevega grafa velja
 $$\chi(K(2k+d,k)) = d+2.$$
 \end{izrek}
 
 \noindent
-Preformulirajmo ta izrek v obliko problema obstoja na sledeč način: \\
+Preformulirajmo ta izrek v obliko problema obstoja na sledeč način:
 
 \noindent
-{\em Če družino podmnožic s $k$ elementi množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$, da $V_i$ vsebuje par $k$-elementnih disjunktnih množic $A$ in $B$.} \\
+{\em Če družino $k$-elementnih podmnožic množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$, da $V_i$ vsebuje par $k$-elementnih disjunktnih množic $A$ in $B$.} \\
 
-Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^d $, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
+Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^d $, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
 
 \begin{izrek}[Borsuk-Ulam]
 Za vsako zvezno preslikavo $f:S^d \rightarrow \mathbb{R}^d$, z $d$-sfere v $d$-prostor, obstajata antipodni točki $x^*$ in $-x^*$, ki ju $f$ slika v isto točko, torej $f(x^*)=f(-x^*)$.
@@ -116,13 +117,19 @@ Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošnem položaju} na s
 
 \indent Vzemimo množico $2k+d$ točk v splošnem položaju na sferi $S^{d+1}$. Naj bo $V(n,k)$ množica vseh $k$-elementnih podmnožic začetne množice, razdelimo jo na $d+1$ razredov, $V(n,k) = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$. Naš cilj je najti par disjunktnih $k$-elementnih množic $A$ in $B$, ki pripadata istemu razredu $V_i$.
 
-Za $i=1, 2,\ldots, d+1$ definirajmo $O_i = \{x \in S^{d+1}; \text{odprta polsfera } H_x \text{ z vrhom } x \text{ vsebuje } k\text{-elementno množico iz } V_i\}.$ %polepšati, da bo kot v besedilu
+Za $i=1, 2,\ldots, d+1$ definirajmo
+\begin{align*} O_i = \{x \in S^{d+1}; &\text{ odprta polsfera } H_x \text{ z vrhom } x \\ &\text{ vsebuje } k\text{-elementno množico iz } V_i\}.
+\end{align*}
 
 Vsaka množica $O_i$ je odprta. Za vsak $x \in O_i$ namreč obstaja neka odprta okolica, za vsak element $y$ iz te okolice pa še vedno velja, da polsfera, katere vrh je $y$, vsebuje istih $k$-elementov kot polsfera, katere vrh je $x$. To sledi iz dejstva, da smo v definiciji množic $O_i$ uporabili {\em odprte} polsfere.
 
-Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1}$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic $O_i$ vsebuje antipodni točki $x^*$ in $-x^*$. 
+Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1})$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic iz omenenjenega pokritja vsebuje antipodni točki $x^*$ in $-x^*$. 
 
-Recimo, da je to množica $C$. Potem po definiciji množic $O_i$ polsferi $H_{x^*}$ in $H_{-x^*}$ vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije.  
+To ne more biti množica $C$, saj po definiciji množic $O_i$ polsferi $H_{x^*}$ in $H_{-x^*}$, ko velja $x^*, -x^* \in C$, vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije. Sledi, da vsaj $d+2$ točki ležita na ekvatorju $\overline H_{x^*} \cap \overline H_{-x^*}$, torej na hiperravnini skozi središče sfere. To pa ne more biti res, saj so točke v splošnem položaju.
+
+Zato ena izmed množic $O_i$ vsebuje antipodni točk $x^*$ in $-x^*$i. Po definiciji množic $O_i$  obstajata \mbox{$k$-elementni} množici $A, B \in V_i$ z lastnostjo $A \subseteq H_{x^*}$ in $B \subseteq H_{-x^*}$. 
+
+Ker pa govorimo o {\em odprtih} polsferah, sta $H_{x^*}$ in $H_{-x^*}$ disjunktni. Sledi, da sta tudi $A$ in $B$ disjunktni. Našli smo torej $k$-elementni množici, ki pripadata istemu razredu množic $V_i$. \qed
 
 
 %%%%
