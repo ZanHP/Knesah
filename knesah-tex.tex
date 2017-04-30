@@ -96,7 +96,7 @@ tako, da so vse izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprte bo
 \indent Naj bo pokritje $S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1}$ dano, kot je zapisano v izreku. Predpostavimo, da noben izmed $U_i$ ne vsebuje dveh antipodnih točk. Definirajmo preslikavo $f:S^d \rightarrow \mathbb{R}^d$ na sledeč način:
 $$f(x) := (d(x,U_1), d(x,U_2), \ldots, d(x,U_d)).$$
 Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. \\
-\indent Ker je to zvezna funkcija na $x$, je tudi $f$ zvezna. Torej lahko uporabimo Borsuk-Ulamov izrek, ki nam pove, da na domeni $f$, torej na $S^d$, obstajata antipodni točki $x^*$ in $-x^*$ z lastnostjo $f(x^*)=f(-x^*)$. Ker po predpostavki $U_{d+1}$ ne vsebuje antipodnih točk, sklepamo, da je vsaj en izmed $x^*$ in $-x^*$ vsebovan v eni izmed množic $U_i$, recimo v $U_k$ za $k\leq d$. Brez škode za splošnost lahko privzamemo, da je to $x^*$, torej $x^* \in U_k$. To pomeni, da je $d(x^*, U_k) = 0$, ključno pa je, da je zaradi lastnosti $f(x^*)=f(-x^*)$ tudi $d(-x^*, U_k) = 0$.\\
+\indent Ker je to zvezna funkcija na $x$, je tudi $f$ zvezna. Torej lahko uporabimo Borsuk-Ulamov izrek, ki nam pove, da na domeni $f$, torej na $S^d$, obstajata antipodni točki $x^*$ in $-x^*$ z lastnostjo $f(x^*)=f(-x^*)$. Ker po predpostavki z začetka dokaza $U_{d+1}$ ne vsebuje antipodnih točk, sklepamo, da je vsaj en izmed $x^*$ in $-x^*$ vsebovan v eni izmed množic $U_i$, recimo v $U_k$ za $k\leq d$. Brez škode za splošnost lahko privzamemo, da je to $x^*$, torej $x^* \in U_k$. To pomeni, da je $d(x^*, U_k) = 0$, ključno pa je, da je zaradi lastnosti $f(x^*)=f(-x^*)$ tudi $d(-x^*, U_k) = 0$.\\
 \indent Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.\\
 \indent Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline {U_k}$. Ta množica pa je vsebovana v $S^d\textbackslash(-U_k)$, \mbox{$-U_k = \{-x;x \in U_k\}$}. Množica $S^d\textbackslash(-U_k)$ je namreč zaprta in vsebuje $U_k$, pri tem smo upoštevali predpostavko, da $U_k$ ne vsebuje antipodnih točk. Ampak, ker je zaprta in vsebuje $U_k$, vsebuje tudi $\overline {U_k}$. To pomeni, da $-x^*$ leži v  $S^d\textbackslash(-U_k)$, torej ne more ležati v $-U_k$. Ker pa smo privzeli, da $x^* \in U_k$, smo prišli do protislovja. \qed
 
@@ -106,7 +106,7 @@ V svojem dokazu iz leta 1978 je Imre Bárány uporabil še Galeov izrek o obstoj
 Obstaja taka postavitev $2k+d$ točk na $d$-dimenzionalno sfero $S^d$, da vsaka odprta polsfera vsebuje vsaj $k$ izmed teh točk.
 \end{izrek}
 
-Leta 2002 je dodiplomski študent Joshua Greene nadalje poenostavil Bárányjev dokaz. Ugotovil je namreč, da zadošča, če so točke iz izreka v splošnem položaju na sferi.
+Leta 2002 je dodiplomski študent Joshua Greene nadalje poenostavil Bárányjev dokaz. Ugotovil je namreč, da zadošča, če so točke iz izreka v splošnem položaju na sferi. Tu je zapisan Greeneov dokaz.
 
 \begin{definicija}
 Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošnem položaju} na sferi $S^{d+1}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
@@ -127,7 +127,7 @@ Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldot
 
 To ne more biti množica $C$, saj po definiciji množic $O_i$ polsferi $H_{x^*}$ in $H_{-x^*}$, ko velja $x^*, -x^* \in C$, vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije. Sledi, da vsaj $d+2$ točki ležita na ekvatorju $\overline H_{x^*} \cap \overline H_{-x^*}$, torej na hiperravnini skozi središče sfere. To pa ne more biti res, saj so točke v splošnem položaju.
 
-Zato ena izmed množic $O_i$ vsebuje antipodni točk $x^*$ in $-x^*$i. Po definiciji množic $O_i$  obstajata \mbox{$k$-elementni} množici $A, B \in V_i$ z lastnostjo $A \subseteq H_{x^*}$ in $B \subseteq H_{-x^*}$. 
+Zato ena izmed množic $O_i$ vsebuje antipodni točk $x^*$ in $-x^*$. Po definiciji množic $O_i$  obstajata \mbox{$k$-elementni} množici $A, B \in V_i$ z lastnostjo $A \subseteq H_{x^*}$ in $B \subseteq H_{-x^*}$. 
 
 Ker pa govorimo o {\em odprtih} polsferah, sta $H_{x^*}$ in $H_{-x^*}$ disjunktni. Sledi, da sta tudi $A$ in $B$ disjunktni. Našli smo torej $k$-elementni množici, ki pripadata istemu razredu množic $V_i$. \qed
 
