@@ -70,7 +70,7 @@ Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V 
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{petersenov_graf_barvanje} % first figure itself
-        	\caption{Primer barvanja tega grafa}
+        	\caption{Primer barvanja tega grafa z $d+2$, torej $3$ barvami}
     	\end{minipage}\hfill
     	\begin{minipage}{0.45\textwidth}
        	 \centering
@@ -82,7 +82,7 @@ Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V 
 
 \end{zgled}
 
-Da dobimo idejo, s koliko barvami zanesljivo lahko pobarvamo Kneserjev graf, zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila i iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale $k$-elementne množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$. 
+Da dobimo idejo, s koliko barvami zanesljivo lahko pobarvamo Kneserjev graf, zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila i iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale \mbox{$k$-elementne} množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$. 
 
 Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kar najmanjše možno število barv, torej kromatično število Kneserjevega grafa $K(2k+d,k)$.
 
@@ -145,9 +145,14 @@ Za $i=1, 2,\ldots, d+1$ definirajmo
 \begin{align*} O_i = \{x \in S^{d+1}; &\text{ odprta polsfera } H_x \text{ z vrhom } x \\ &\text{ vsebuje } k\text{-elementno množico iz } V_i\}.
 \end{align*}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{polsfera}
+\end{figure}
+
 Vsaka množica $O_i$ je odprta. Za vsak $x \in O_i$ namreč obstaja neka odprta okolica, za vsak element $y$ iz te okolice pa še vedno velja, da polsfera, katere vrh je $y$, vsebuje istih $k$-elementov kot polsfera, katere vrh je $x$. To sledi iz dejstva, da smo v definiciji množic $O_i$ uporabili {\em odprte} polsfere.
 
-Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1})$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic iz omenenjenega pokritja vsebuje antipodni točki $x^*$ in $-x^*$. 
+Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1})$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic iz omenjenega pokritja vsebuje antipodni točki $x^*$ in $-x^*$. 
 
 To ne more biti množica $C$, saj po definiciji množic $O_i$ polsferi $H_{x^*}$ in $H_{-x^*}$, ko velja $x^*, -x^* \in C$, vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije. Sledi, da vsaj $d+2$ točki ležita na ekvatorju $\overline H_{x^*} \cap \overline H_{-x^*}$, torej na hiperravnini skozi središče sfere. To pa ne more biti res, saj so točke v splošni legi.
 
