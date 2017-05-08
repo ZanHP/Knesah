@@ -80,7 +80,7 @@ Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V 
         	 \includegraphics[width=0.8\textwidth]{petersenov_graf_mnozice}
        	 \caption{Prikaz povezav med disjunktnimi množicami}
     	\end{minipage}
-\end{figure}
+\end{figure}---
 }
 
 \end{zgled}
@@ -95,7 +95,7 @@ Vozlišča Kneserjevega grafa $K(2k+d,k)$ lahko pobarvamo z $d+2$ barvama.
 {\em Dokaz:}
 Zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila $i$ iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale \mbox{$k$-elementne} množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$.\qed
 
-Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kar najmanjše možno število barv, torej kromatično število Kneserjevega grafa $K(2k+d,k)$.
+Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kar najmanjše možno število barv, torej kromatično število Kneserjevega grafa $K(2k+d,k)$ je $d+2$.
 
 \newpage
 
@@ -114,7 +114,7 @@ Preformulirajmo ta izrek v obliko problema obstoja na sledeč način:
 Če družino $k$-elementnih podmnožic množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$ tako, da $V_i$ vsebuje par disjunktnih $k$-elementnih množic $A$ in $B$.
 \end{izrek}
 
-Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^d $, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
+Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^{d+1}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
 
 \begin{izrek}[Borsuk-Ulam]
 Za vsako zvezno preslikavo $f:S^d \rightarrow \mathbb{R}^d$ $d$-sfere v $d$-prostor, obstajata antipodni točki $x^*$ in $-x^*$, ki ju $f$ slika v isto točko, torej $f(x^*)=f(-x^*)$.
@@ -128,13 +128,13 @@ $$S^d = U_1 \cup U_2 \cup \ldots \cup U_d \cup U_{d+1},$$
 tako, da je vsaka izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprta bodisi zaprta, potem ena izmed $d+1$ množic vsebuje par antipodnih točk $x^*$ in $-x^*$.
 \end{izrek}
 
-Za dokaz Kneserjeve domneve potrebujemo le primer, ko so $U_1, \ldots, U_d$ odprte, vseeno pa je naveden splošnejši izrek, ki od množic zahteva le odprtost ali pa zaprtost. V dokazu je razvidno, da odprtost in zaprtost uporabimo vsakič le za posamezno množico.
+Za dokaz Kneserjeve domneve potrebujemo le primer, ko so $U_1, \ldots, U_d$ odprte, vseeno pa je naveden splošnejši izrek, ki od množic zahteva le odprtost ali pa zaprtost. Iz dokaza je razvidno, da odprtost in zaprtost uporabimo vsakič le za posamezno množico.
 
 \newpage
-\begin{zgled}{Za občutek si oglejmo sfero $S^1$ pokrito z $d+1$, torej z $2$ množicama. Množica $A$, ki je na sliki narisana z zvezno krivuljo, je odprta, $B$, ki je narisana črtkano, pa zaprta. Očitno je, da $B$ vsebuje antipodni točki. 
+\begin{zgled}{Za občutek si oglejmo sfero $S^1$ pokrito z $d+1$, torej z $2$ množicama. Množica $A$, ki je na sliki narisana z zvezno krivuljo, je odprta, $B$, ki je narisana črtkano, pa poljubna taka, da velja $A \cup B = S^1$. V tem primeru je očitno, da $B$ vsebuje antipodni točki. 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.3\textwidth]{sfera_s1}
+\includegraphics[width=0.27\textwidth]{sfera_s1}
 \caption{Sfera $S^1$}
 \end{figure}
 }
@@ -157,10 +157,10 @@ Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sled
 V svojem dokazu iz leta 1978 je Imre Bárány uporabil še Galeov izrek o obstoju določene postavitve točk na sfero $S^d$. Bárány je svoj dokaz objavil nekaj tednov za tem, ko je László Lovász prvi dokazal Kneserjevo domnevo s pomočjo Borsuk-Ulamovega dokaza.
 
 \begin{izrek}[Gale]
-Obstaja taka postavitev $2k+d$ točk na $d$-dimenzionalno sfero $S^d$, da vsaka odprta polsfera vsebuje vsaj $k$ izmed teh točk.
+Za vsak $d \geq 0$ in vsak $d \geq 1$ obstaja taka postavitev $2k+d$ točk na $d$-dimenzionalno sfero $S^d$, da vsaka odprta polsfera vsebuje vsaj $k$ izmed teh točk.
 \end{izrek}
 
-Leta 2002 je dodiplomski študent Joshua Greene nadalje poenostavil Bárányjev dokaz. Ugotovil je namreč, da zadošča, če so točke iz izreka v splošni legi na sferi. Tu je zapisan Greeneov dokaz.
+Tudi dokaz tega izreka lahko bralec najde v Matouškovi knjigi ''Using the Borsuk-Ulam theorem''. Dokaz ni tako preprost, zato je še večjega pomena Greenova poenostavitev Bárányjevega dokaza. Leta 2002 je Joshua Greene namreč ugotovil, da zadošča, če so točke iz izreka v splošni legi na sferi. Tu je zapisan njegov dokaz.
 
 \begin{definicija}
 Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $S^{d+1}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
@@ -169,7 +169,7 @@ Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.35\textwidth]{splosna_lega}
-\caption{Primer za $d=1$, postavitev $3$ točk sfero $S^1$}
+\caption{Primer za $d=0$, postavitev $4$ točk sfero $S^1$}
 \end{figure}
 
 
@@ -193,9 +193,9 @@ Vsaka množica $O_i$ je odprta. Za vsak $x \in O_i$ namreč obstaja neka odprta 
 
 Odprte množice $O_i$ in zaprta množica $C = S^{d+1} \backslash (O_1 \cup \ldots \cup O_{d+1})$ tvorijo pokritje $S^{d+1}$. To pokritje zadošča pogoju iz izreka Lyusternik-Shnirel'mana, zato vemo, da ena izmed množic iz omenjenega pokritja vsebuje antipodni točki $x^*$ in $-x^*$. 
 
-To ne more biti množica $C$, saj po definiciji polsferi $H_{x^*}$ in $H_{-x^*}$, ko velja $x^*, -x^* \in C$, vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije. Sledi, da vsaj $d+2$ točki ležita na ekvatorju $\overline H_{x^*} \cap \overline H_{-x^*}$, torej na hiperravnini skozi središče sfere. To pa ne more biti res, saj so točke v splošni legi.
+To ne more biti množica $C$, saj po definiciji polsferi $H_{x^*}$ in $H_{-x^*}$, ko velja $x^*, -x^* \in C$, vsebujeta manj kot $k$ točk. To je res, saj unija množic $O_i$ vsebuje {\em vse} vrhove polsfer, ki vsebujejo $k$-elementne podmnožice začetne množice, $C$ pa je komplement te unije. Sledi, da vsaj $d+2$ točki ležita na ekvatorju $\overline H_{x^*} \cap \overline H_{-x^*}$, torej na hiperravnini skozi središče sfere. To pa ne more biti res, saj so točke v splošni legi.
 
-Zato ena izmed množic $O_i$ vsebuje antipodni točk $x^*$ in $-x^*$. Po definiciji množic $O_i$  obstajata \mbox{$k$-elementni} množici $A, B \in V_i$ z lastnostjo $A \subseteq H_{x^*}$ in $B \subseteq H_{-x^*}$. 
+Zato ena izmed množic $O_i$ vsebuje antipodni točki $x^*$ in $-x^*$. Po definiciji množic $O_i$  obstajata \mbox{$k$-elementni} množici $A, B \in V_i$ z lastnostjo $A \subseteq H_{x^*}$ in $B \subseteq H_{-x^*}$. 
 
 Ker pa govorimo o {\em odprtih} polsferah, sta $H_{x^*}$ in $H_{-x^*}$ disjunktni. Sledi, da sta tudi $A$ in $B$ disjunktni. Našli smo torej disjunktni $k$-elementni množici, ki pripadata istemu razredu množic $V_i$. \qed
 
@@ -220,6 +220,8 @@ Ker pa govorimo o {\em odprtih} polsferah, sta $H_{x^*}$ in $H_{-x^*}$ disjunktn
 
 \bibitem{AiZ}
 M.~Aigner in G.~M.~Ziegler, \emph{Proofs from THE BOOK}, 4.\ izdaja, Springer, Berlin--Heidelberg--New York, 2010.
+\bibitem{JiM}
+J.~Matoušek, \emph{Using the Borsuk-Ulam theorem}, Springer-Verlag Berlin Heidelberg, 2003.
 %https://math.berkeley.edu/{tu manjka ~}brandtm/research/kneser.pdf (25.4.2017)
 %http://oai.cwi.nl/oai/asset/9898/9898A.pdf
 
