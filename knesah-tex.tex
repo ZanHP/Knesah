@@ -41,29 +41,30 @@ Oddelek za matematiko}
 
 V teoriji grafov poznamo mnogo različnih tipov grafov. Razlikujemo jih glede na njihove specifične lastnosti. V tem seminarju se bomo ukvarjali s {\em Kneserjevimi grafi} oziroma podrobneje, s {\em kromatičnim številom} le-teh. Najprej podajmo nekaj glavnih definicij.
 
-%%%%
-
 \begin{definicija}
 Graf $K(n,k)$, $n \geq k \geq 1$ in $n, k \in \mathbb{N}$, imenujemo \mbox{\textbf{Kneserjev}}, če je množica vozlišč $V(n,k)$ družina vseh $k$-elementnih podmnožic množice $\{1, 2, \ldots, n\}$. Dve vozlišči sta povezani natanko takrat, ko sta disjunktni. 
 \end{definicija}
 
-Povejmo še, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. V primeru, ko je $n < 2k$, imata vsaki dve $k$-elementni množici neprazen presek. Tak Kneserjev graf nima nobenih povezav, zato privzemimo, da velja $n \geq 2k$.
+Povejmo še, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. 
+
+V primeru, ko je $n < 2k$, imata vsaki dve $k$-elementni množici neprazen presek. Tak Kneserjev graf nima nobenih povezav, zato privzemimo, da velja $n \geq 2k$. 
+Zdaj lahko še poenostavimo zapis in pišemo $n = 2k + d, k \geq 1, d \geq 0$.
 
 \begin{definicija}
 Preslikavo $c: V \rightarrow \{1, \ldots, m\}$, ki slika vozlišča grafa v množico barv, imenujemo \textbf {barvanje vozlišč grafa}. Barvanje vozlišč je pravilno, če sta vsaki dve sosednji vozlišči pobarvani z različnima barvama.
 \end{definicija}
 
 \begin{definicija}
-Najmanjše število $m$, za katero obstaja pravilno barvanje vozlišč grafa $G$ z $m$ barvami, imenujemo \textbf {kromatično število}. Označimo ga s $\chi(G).$
+Najmanjše naravno število $m$, za katero obstaja pravilno barvanje vozlišč grafa $G$ z $m$ barvami, imenujemo \textbf {kromatično število}. Označimo ga s $\chi(G).$
 \end{definicija}
 
-Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da nobeni dve sosednji vozlišči nista iste barve. Množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. 
+Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lahko pobarvamo vozlišča grafa tako, da nobeni sosednji vozlišči nista iste barve. 
 
-
+Še nekoliko drugače povedano, množico vozlišč $V$ bi radi predstavili kot disjunktno unijo barvnih razredov, $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(G)}$, teh pa želimo, da je najmanj. 
 
 Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek. To sledi iz definicije Kneserjevih grafov, če bi imele te množice prazen presek, to je, obstajali bi vsaj dve disjunktni, med katerima bi obstajala povezava, zato pa bi bili pobarvani z različno barvo.
 
-Vozlišča Kneserjevega grafa $K(n,k)$ bomo razdelili na disjunktne množice $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{\chi(K(n,k))}$, kjer bo vsak $V_i$ družina $k$-elementnih množic z nepraznim presekom. Ker smo predpostavili, da je $n \geq 2k$, poenostavimo zapis in pišimo $n = 2k + d, k \geq 1, d \geq 0$.
+
 
 \newpage
 \begin{zgled}{Kneserjev graf $K(5,2)$ je zelo znan primer, imenujemo ga Petersenov graf. 
@@ -93,7 +94,7 @@ Vozlišča Kneserjevega grafa $K(2k+d,k)$ lahko pobarvamo z $d+2$ barvama.
 
 \noindent
 {\em Dokaz:}
-Zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila $i$ iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih množic, ki imajo $i$ za najmanjši element. Preostale \mbox{$k$-elementne} množice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$.\qed
+Zapišimo preprost predpis za barvanje grafa $K(2k+d,k)$, pri katerem uporabimo $d+2$ barv. Za števila $i$ iz $\{1,2,\ldots,d+1\}$ naj množica $V_i$ sestoji iz vseh $k$-elementnih podmnožic, ki imajo $i$ za najmanjši element. Preostale \mbox{$k$-elementne} podmnožice so vsebovane v množici $\{d+2,d+3,\ldots,2k+d\}$, katere moč je le $2k-1$. Sledi, da imajo te množice neprazen presek in lahko zanje uporabimo barvo $d+2$.\qed
 
 Tako smo dobili $\chi(K(2k+d,k)) \leq d+2$. Kneser je postavil domnevo, da je $d+2$ kar najmanjše možno število barv, torej kromatično število Kneserjevega grafa $K(2k+d,k)$ je $d+2$.
 
@@ -114,7 +115,7 @@ Preformulirajmo ta izrek v obliko problema obstoja na sledeč način:
 Če družino $k$-elementnih podmnožic množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$ tako, da $V_i$ vsebuje par disjunktnih $k$-elementnih množic $A$ in $B$.
 \end{izrek}
 
-Tako smo prišli do splošnejše različice izreka. Ta nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^{d+1}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
+V jeziku grafov to pomeni, da bi z isto barvo pobarvail sosednji vozlišči. Ta različica izreka nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^{d+1}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
 
 \begin{izrek}[Borsuk-Ulam]
 Za vsako zvezno preslikavo $f:S^d \rightarrow \mathbb{R}^d$ $d$-sfere v $d$-prostor, obstajata antipodni točki $x^*$ in $-x^*$, ki ju $f$ slika v isto točko, torej $f(x^*)=f(-x^*)$.
@@ -152,7 +153,8 @@ Tu $d(x,U_i)$ označuje razdaljo med točko $x$ in množico $U_i$. Ker je to zve
 
 Obravnavajmo najprej primer, ko je $U_k$ zaprt. Potem iz $d(-x^*, U_k) = 0$ sledi, da je $-x^* \in U_k$, kar pa je protislovje s predpostavko, da noben izmed $U_i$ ne vsebuje para antipodnih točk.
 
-Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline U_k$. Ta množica pa je vsebovana v $S^d\textbackslash(-U_k)$, \mbox{$-U_k = \{-x;x \in U_k\}$}. Množica $S^d\textbackslash(-U_k)$ je namreč zaprta in vsebuje $U_k$, pri tem smo upoštevali predpostavko, da $U_k$ ne vsebuje antipodnih točk. Ampak, ker je zaprta in vsebuje $U_k$, vsebuje tudi $\overline U_k$. To pomeni, da $-x^*$ leži v  $S^d\textbackslash(-U_k)$, torej ne more ležati v $-U_k$. Ker pa smo privzeli, da $x^* \in U_k$, smo prišli do protislovja.\qed \newline \\
+Če je $U_k$ odprt, potem iz $d(-x^*, U_k) = 0$ sledi, da $-x^*$ leži v zaprtju $U_k$, torej v $\overline U_k$. Ta množica pa je vsebovana v $S^d\textbackslash(-U_k)$, \mbox{$-U_k = \{-x;x \in U_k\}$}. Množica $S^d\textbackslash(-U_k)$ je namreč zaprta in vsebuje $U_k$, pri tem smo upoštevali predpostavko, da $U_k$ ne vsebuje antipodnih točk. Ampak, ker je zaprta in vsebuje $U_k$, vsebuje tudi $\overline U_k$. To pomeni, da $-x^*$ leži v  $S^d\textbackslash(-U_k)$, torej ne more ležati v $-U_k$. Ker pa smo privzeli, da $x^* \in U_k$, smo prišli do protislovja.\qed 
+\newpage
 
 V svojem dokazu iz leta 1978 je Imre Bárány uporabil še Galeov izrek o obstoju določene postavitve točk na sfero $S^d$. Bárány je svoj dokaz objavil nekaj tednov za tem, ko je László Lovász prvi dokazal Kneserjevo domnevo s pomočjo Borsuk-Ulamovega dokaza.
 
@@ -163,7 +165,7 @@ Za vsak $d \geq 0$ in vsak $d \geq 1$ obstaja taka postavitev $2k+d$ točk na $d
 Tudi dokaz tega izreka lahko bralec najde v Matouškovi knjigi ''Using the Borsuk-Ulam theorem''. Dokaz ni tako preprost, zato je še večjega pomena Greenova poenostavitev Bárányjevega dokaza. Leta 2002 je Joshua Greene namreč ugotovil, da zadošča, če so točke iz izreka v splošni legi na sferi. Tu je zapisan njegov dokaz.
 
 \begin{definicija}
-Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $S^{d+1}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
+Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $S^{d+1} \subset \mathbb{R}^{d+2}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
 \end{definicija}
 
 \begin{figure}[h!]
@@ -175,7 +177,7 @@ Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $
 
 \noindent
 {\em Dokaz Kneserjeve domneve:}\\
-\indent Vzemimo množico $2k+d$ točk v splošni legi na sferi $S^{d+1}$. Naj bo $V(n,k)$ množica vseh $k$-elementnih podmnožic začetne množice, razdelimo jo na $d+1$ razredov, $V(n,k) = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$. Naš cilj je najti par disjunktnih $k$-elementnih množic $A$ in $B$, ki pripadata istemu razredu $V_i$.
+\indent Vzemimo množico točk $\{1,2,\ldots,2k+d\}$ in jih postaimo v splošno lego na sfero $S^{d+1}$. Naj bo $V(n,k)$ množica vseh $k$-elementnih podmnožic začetne množice, razdelimo jo na $d+1$ razredov, $V(n,k) = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$. Naš cilj je najti par disjunktnih $k$-elementnih množic $A$ in $B$, ki pripadata istemu razredu $V_i$.
 \newpage
 
 
