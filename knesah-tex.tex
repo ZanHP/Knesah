@@ -71,6 +71,12 @@ V tem razdelku bomo opisali nekaj preprostejših lastnosti Kneserjevih grafov.
 
 Najprej si oglejmo dva posebna primera. Prvi skrajni primer je, da za vsak $n \in \mathbb{N}$ velja, da je $K(n,1)$ poln graf, saj je vsaka točka svoje vozlišče in vsa vozlišča so disjunktna. Drugi pa, da je $K(2n,n)$ enak $\frac{1}{2} {{2n}\choose{n}}$ kopijam potnega grafa $P_2$. To je res, saj je vsaka $n$-elementna podmnožica v $\{1,\ldots,2n\}$ disjunktna le s svojim komplementom.
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.2\textwidth]{poln_graf}
+\caption{Poln graf $K_9$}
+\end{figure}
+
 Hitro vidimo, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. Malenkost manj očitno je, da je graf regularen. Njegovo stopnjo lahko izračunamo, če iz množice z $n$ elementi odstranimo $k$ elementov, ki jih vsebuje vsako vozlišče, potem pa jih iz preostalih $n-k$ izberemo $k$, ki jih vsebuje vozlišče, s katerim je povezano prvotno vozlišče. Takih povezav lahko za vsako vozlišče tvorimo ravno ${n-k}\choose{k}$, kar je stopnja regularnosti grafa.
 
 
