@@ -62,6 +62,7 @@ Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lah
 
 Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek. To sledi iz definicije Kneserjevih grafov, če bi imele te množice prazen presek, to je, obstajali bi vsaj dve disjunktni, med katerima bi obstajala povezava, zato pa bi bili pobarvani z različno barvo.
 
+Omenimo še, da so Kneserjevi grafi posplošitev lihih grafov. Ti so namreč definirani kot grafi z $(n-1)$-elementnimi podmnožicami množice z $(2n-1)$ elementi, to pa se ujema z definicijo $K(2n-1,n-1)$.
 
 
 \newpage
@@ -74,11 +75,10 @@ Najprej si oglejmo dva posebna primera. Prvi skrajni primer je, da za vsak $n \i
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.2\textwidth]{poln_graf}
-\caption{Poln graf $K_9$}
+\caption{Poln graf $K_9=K(9,1)$}
 \end{figure}
 
 Hitro vidimo, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. Malenkost manj očitno je, da je graf regularen. Njegovo stopnjo lahko izračunamo, če iz množice z $n$ elementi odstranimo $k$ elementov, ki jih vsebuje vsako vozlišče, potem pa jih iz preostalih $n-k$ izberemo $k$, ki jih vsebuje vozlišče, s katerim je povezano prvotno vozlišče. Takih povezav lahko za vsako vozlišče tvorimo ravno ${n-k}\choose{k}$, kar je stopnja regularnosti grafa.
-
 
 
 \begin{zgled}{Kneserjev graf $K(5,2)$ je zelo znan primer, imenujemo ga Petersenov graf. 
@@ -96,9 +96,12 @@ Hitro vidimo, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. Malenko
        	 \caption{Prikaz povezav med disjunktnimi množicami}
     	\end{minipage}
 \end{figure}
-}
+
+Ta graf zelo pogosto pride prav pri dokazovanju obstoja nekega tipa grafa ali pa kot protiprimer. Imenuje se po Juliusu Petersenu, ki ga je skonstruiral za najmanjši kubični graf, to je, graf, ki je regularen stopnje $3$, brez mostov in brez barvanja robov s tremi barvami. Ima $10$ vozlišč in $15$ povezav, kar se ujema s prej opisanima lastnostima.}
 
 \end{zgled}
+
+
 
 Da dobimo idejo, s koliko barvami zanesljivo lahko pobarvamo Kneserjev graf, si oglejmo naslednjo trditev.
 
@@ -240,6 +243,7 @@ M.~Aigner in G.~M.~Ziegler, \emph{Proofs from THE BOOK}, 4.\ izdaja, Springer, B
 J.~Matoušek, \emph{Using the Borsuk-Ulam theorem}, Springer-Verlag Berlin Heidelberg, 2003.
 %https://math.berkeley.edu/{tu manjka ~}brandtm/research/kneser.pdf (25.4.2017)
 %http://oai.cwi.nl/oai/asset/9898/9898A.pdf
+%https://en.wikipedia.org/wiki/Petersen_graph (10.5.2017)
 
 %slike
 %https://graphtheoryinlatex.files.wordpress.com/2010/02/coloringpeteresen2.png
