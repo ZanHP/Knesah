@@ -62,7 +62,7 @@ Kromatično število grafa $G$ je torej najmanjše število barv, s katerimi lah
 
 Za vsak barvni razred velja, da imajo vsi njegovi elementi, torej $k$-elementne množice, neprazen presek. To sledi iz definicije Kneserjevih grafov, če bi imele te množice prazen presek, to je, obstajali bi vsaj dve disjunktni, med katerima bi obstajala povezava, zato pa bi bili pobarvani z različno barvo.
 
-Omenimo še, da so Kneserjevi grafi posplošitev lihih grafov. Ti so namreč definirani kot grafi z $(n-1)$-elementnimi podmnožicami množice z $(2n-1)$ elementi, to pa se ujema z definicijo $K(2n-1,n-1)$.
+Omenimo še, da so Kneserjevi grafi posplošitev lihih grafov. Ti so namreč definirani kot grafi na vozliščih, ki so $(n-1)$-elementne podmnožice množice z $2n-1$ elementi, dve vozlišči pa sta povezani natanko takrat, ko predstavljata disjunktni množici. To pa se ravno ujema z definicijo $K(2n-1,n-1)$.
 
 
 \newpage
@@ -70,7 +70,7 @@ Omenimo še, da so Kneserjevi grafi posplošitev lihih grafov. Ti so namreč def
 
 V tem razdelku bomo opisali nekaj preprostejših lastnosti Kneserjevih grafov.
 
-Najprej si oglejmo dva posebna primera. Prvi skrajni primer je, da za vsak $n \in \mathbb{N}$ velja, da je $K(n,1)$ poln graf, saj je vsaka točka svoje vozlišče in vsa vozlišča so disjunktna. Drugi pa, da je $K(2n,n)$ enak $\frac{1}{2} {{2n}\choose{n}}$ kopijam potnega grafa $P_2$. To je res, saj je vsaka $n$-elementna podmnožica v $\{1,\ldots,2n\}$ disjunktna le s svojim komplementom.
+Najprej si oglejmo dva posebna primera. Prvi skrajni primer je, da za vsak $n \in \mathbb{N}$ velja, da je $K(n,1)$ poln graf, saj je vsaka točka svoje vozlišče in vsa vozlišča so disjunktna. Drugi pa, da je $K(2n,n)$ enak uniji $\frac{1}{2} {{2n}\choose{n}}$ kopij potnega grafa $P_2$. To je res, saj je vsaka $n$-elementna podmnožica v $\{1,\ldots,2n\}$ disjunktna le s svojim komplementom.
 
 \begin{figure}[h!]
 \centering
@@ -78,7 +78,7 @@ Najprej si oglejmo dva posebna primera. Prvi skrajni primer je, da za vsak $n \i
 \caption{Poln graf $K_9=K(9,1)$}
 \end{figure}
 
-Hitro vidimo, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. Malenkost manj očitno je, da je graf regularen. Njegovo stopnjo lahko izračunamo, če iz množice z $n$ elementi odstranimo $k$ elementov, ki jih vsebuje vsako vozlišče, potem pa jih iz preostalih $n-k$ izberemo $k$, ki jih vsebuje vozlišče, s katerim je povezano prvotno vozlišče. Takih povezav lahko za vsako vozlišče tvorimo ravno ${n-k}\choose{k}$, kar je stopnja regularnosti grafa.
+Hitro vidimo, da za število vozlišč velja $|V(n,k)|={{n}\choose{k}}$. Malenkost manj očitno je, da je graf regularen. Njegovo stopnjo lahko izračunamo, če iz množice z $n$ elementi odstranimo $k$ elementov, ki jih vsebuje vozlišče, potem pa jih iz preostalih $n-k$ izberemo $k$, ki jih vsebuje vozlišče, s katerim je povezano prvotno vozlišče. Takih povezav lahko za vsako vozlišče tvorimo ravno ${n-k}\choose{k}$, kar je stopnja regularnosti grafa.
 
 
 \begin{zgled}{Kneserjev graf $K(5,2)$ je zelo znan primer, imenujemo ga Petersenov graf. 
@@ -132,7 +132,7 @@ Preformulirajmo ta izrek v obliko problema obstoja na sledeč način:
 Če družino $k$-elementnih podmnožic množice $\{1, 2, \ldots, 2k+d\}$ razdelimo na $d+1$ razredov,  $V = V_1 \sqcup V_2 \sqcup \ldots \sqcup V_{d+1}$, potem obstaja $i$ tako, da $V_i$ vsebuje par disjunktnih $k$-elementnih množic $A$ in $B$.
 \end{izrek}
 
-V jeziku grafov to pomeni, da bi z isto barvo pobarvail sosednji vozlišči. Ta različica izreka nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^{d+1}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
+V jeziku grafov to pomeni, da bi z isto barvo pobarvali sosednji vozlišči. Ta različica izreka nam, še preden se poglobimo v sam dokaz, nudi drugačen pogled na zastavljen problem, saj ne omenja grafov. Želimo le pokazati obstoj množic $A$ in $B$. László Lovász je uvidel, da bistvo problema tiči v slavnem izreku o $d$-dimenzionalni enotski sferi $S^d$ v $\mathbb{R}^{d+1}$, $S^d = \{x \in \mathbb{R}: |x|=1\}$. Zapišimo še ta izrek.
 
 \begin{izrek}[Borsuk-Ulam]
 Za vsako zvezno preslikavo $f:S^d \rightarrow \mathbb{R}^d$ $d$-sfere v $d$-prostor, obstajata antipodni točki $x^*$ in $-x^*$, ki ju $f$ slika v isto točko, torej $f(x^*)=f(-x^*)$.

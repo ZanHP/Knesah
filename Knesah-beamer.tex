@@ -6,7 +6,14 @@
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 
+
+ % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+
 \usetheme{Warsaw}
+
+%\newdimen\beamer@headheight
+%\beamer@headheight=20pt
 
 \def\qed{$\hfill\Box$}   % konec dokaza
 \newtheorem{izrek}{Izrek}
@@ -52,7 +59,7 @@ Preslikavo $c: V \rightarrow \{1, \ldots, m\}$, ki slika vozlišča grafa v mno�
 \pause
 
 \begin{definicija}
-Najmanjše naravno število $m$, za katero obstaja pravilno barvanje vozlišč grafa $G$ z $m$ barvami, imenujemo \textbf {kromatično število}. Označimo ga s $\chi(G).$
+Najmanjše naravno število $m$, za katero obstaja pravilno barvanje vozlišč grafa $G$ z $m$ barvami, imenujemo \alert {kromatično število}. Označimo ga s $\chi(G).$
 \end{definicija}
 
 \end{frame}
@@ -81,32 +88,11 @@ Najmanjše naravno število $m$, za katero obstaja pravilno barvanje vozlišč g
 \onslide
 \begin{figure}[b]
 \includegraphics[width=0.3\textwidth]{poln_graf}
-\caption{Poln graf $K_9$}
+\caption{Poln graf $K_9=K(9,1)$}
 \end{figure}
 
 \end{frame}
 
-%%%%
-
-\begin{frame}{Zgled}
-
-{\em Petersenov graf} oziroma $K(5,2)$.
-
-\begin{figure}[h!]
-	\centering
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{petersenov_graf_barvanje} % first figure itself
-        	\caption{Primer barvanja s $3$ barvami}
-    	\end{minipage}\hfill
-    	\begin{minipage}{0.45\textwidth}
-       	 \centering
-        	 \includegraphics[width=0.8\textwidth]{petersenov_graf_mnozice} % second figure itself
-       	 \caption{Prikaz povezav med disjunktnimi množicami}
-    	\end{minipage}
-\end{figure}
-
-\end{frame}
 
 
 %%%%
@@ -152,16 +138,49 @@ tako, da je vsaka izmed prvih $d$ množic $U_1, U_2, \ldots, U_d$ bodisi odprta 
 
 %%%%
 
-\begin{frame}{Splošna lega točk na sferi}
+\begin{frame}{Galeov izrek in splošna lega točk na sferi}
+
+\begin{izrek}[Gale]
+Za vsak $d \geq 0$ in vsak $d \geq 1$ obstaja taka postavitev $2k+d$ točk na $d$-dimenzionalno sfero $S^d$, da vsaka odprta polsfera vsebuje vsaj $k$ izmed teh točk.
+\end{izrek}
+
+\pause
 
 \begin{definicija}
 Točke iz množice $\{1,2,\ldots,2k+d\}$ so v \textbf {splošni legi} na sferi $S^{d+1} \subset \mathbb{R}^{d+2}$, če nobenih $d+2$ točk iz omenjene množice ne leži na hiperravnini skozi središče sfere.
 \end{definicija}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.35\textwidth]{splosna_lega}
+
+\begin{figure}
+\begin{columns}
+\column{.3\linewidth}
 \caption{Primer za $d=0$, postavitev $4$ točk sfero $S^1$}
+\column{.6\linewidth}
+\includegraphics[width=0.45\textwidth]{splosna_lega}
+\end{columns}
+\end{figure}
+
+
+\end{frame}
+
+%%%%
+
+\begin{frame}{Zgled}
+
+{\em Petersenov graf} oziroma $K(5,2)$.
+
+\begin{figure}[h!]
+	\centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{petersenov_graf_barvanje} % first figure itself
+        	\caption{Primer barvanja s $3$ barvami}
+    	\end{minipage}\hfill
+    	\begin{minipage}{0.45\textwidth}
+       	 \centering
+        	 \includegraphics[width=0.8\textwidth]{petersenov_graf_mnozice} % second figure itself
+       	 \caption{Prikaz povezav med disjunktnimi množicami}
+    	\end{minipage}
 \end{figure}
 
 \end{frame}
